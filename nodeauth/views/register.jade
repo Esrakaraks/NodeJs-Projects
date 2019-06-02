@@ -1,7 +1,14 @@
-extends layout
-
-block content
- nav.navbar.navbar-inverse
+doctype html
+html
+  head
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+  body
+    nav.navbar.navbar-inverse
       .container-fluid
         .navbar-header
           a.navbar-brand(href='/') NodeAuth
@@ -15,25 +22,28 @@ block content
         ul.nav.navbar-nav.navbar-right
           li
             a(href="/users/logout") Logout
- h2.page-header Register
- p Please register using the form below
- form(method='post', action='/users/register',enctype='multipart/form-data')
-  .form-group
-   label Name
-   input.form-control(name='name', type='text', placeholder='Enter Name')
-  .form-group
-   label Email
-   input.form-control(name='email', type='email', placeholder='Enter Email')
-  .form-group
-   label Username
-   input.form-control(name='username', type='text', placeholder='Enter Username')
-  .form-group
-   label Password
-   input.form-control(name='password', type='password', placeholder='Enter Password')
-  .form-group
-   label Confirm Password
-   input.form-control(name='password2', type='password', placeholder='Confirm Password')
-  .form-group
-   label Profile Image
-   input.form-control(name='profileimage', type='file')
-  input.btn.btn-primary(type='submit', name='submit',value='Register')
+    ul.errors
+      if errors
+        each error ,i in errors
+          li.alert.alert-danger #{error.msg}
+
+    form(method='post', action='/users/register',enctype='multipart/form-data')
+      .form-group
+      label Name
+      input.form-control(name='name', type='text', placeholder='Enter Name')
+      .form-group
+      label Email
+      input.form-control(name='email', type='email', placeholder='Enter Email')
+      .form-group
+      label Username
+      input.form-control(name='username', type='text', placeholder='Enter Username')
+      .form-group
+      label Password
+      input.form-control(name='password', type='password', placeholder='Enter Password')
+      .form-group
+      label Confirm Password
+      input.form-control(name='password2', type='password', placeholder='Confirm Password')
+      .form-group
+      label Profile Image
+      input.form-control(name='profileimage', type='file')
+      input.btn.btn-primary(type='submit', name='submit',value='Register')
