@@ -1,0 +1,25 @@
+{
+  "name": "blogsystem",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "dependencies": {
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "moment": "*",
+    "mongodb": "*",
+    "monk": "https://github.com/vccabral/monk.git",
+    "morgan": "~1.9.1",
+    "multer": "*",
+    "serve-favicon": "^2.3.2"
+  }
+}
