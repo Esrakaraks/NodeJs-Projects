@@ -11,4 +11,10 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res) {
     console.log("fve")
 });
+router.get('/signUp', function(req, res) {
+    res.render('signUp');
+})
+router.post('/signUp', function(req, res) {
+    res.send('fewqfder');
+})
 module.exports = router;

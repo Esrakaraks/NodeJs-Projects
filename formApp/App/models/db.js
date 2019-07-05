@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/udemy', { useNewUrlParser: true }).then(
+mongoose.connect('mongodb://localhost/appProje', { useNewUrlParser: true }).then(
         () => {
             console.log('mongodb bağlantısı  sağlandı ');
 
