@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var users = require('../models/db');
+
 var users = require('../models/users');
 router.get('/', function(req, res) {
     res.render('home');
@@ -16,21 +16,30 @@ router.get('/signUp', function(req, res) {
     res.render('signUp');
 })
 router.post('/signUp', function(req, res) {
-    var newUser = new users({
-        name: "esra",
-        surname: "karakas",
-        email: "esra@gmail.com",
-        username: "esraa",
-        password: "e"
+    // var newUser = new users({
+    //     name: "esra",
+    //     surname: "karakas",
+    //     email: "esra@gmail.com",
+    //     username: "essra",
+    //     password: "e"
 
 
+    // });
+    // newUser.save((err, data) => {
+    //     if (err)
+    //         console.log(err);
+    //     res.json(data);
+    // });
+
+    var newuser = new users({
+        name: req.body.name,
+        surname: req.body.surname,
+        email: req.body.email,
+        username: req.body.username,
+        password: req.body.password
     });
-    newUser.save((err, data) => {
-        if (err)
-            console.log(err);
-        res.json(data);
-    });
 
+    console.log(newuser);
 
 });
 module.exports = router;
