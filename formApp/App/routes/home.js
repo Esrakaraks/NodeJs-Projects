@@ -4,7 +4,6 @@ var router = express.Router();
 var users = require('../models/users');
 router.get('/', function(req, res) {
     res.render('home');
-
 });
 router.get('/login', function(req, res) {
     res.render('login');
@@ -14,6 +13,12 @@ router.post('/login', function(req, res) {
 });
 router.get('/signUp', function(req, res) {
     res.render('signUp');
+})
+router.get('/usersList', function(req, res) {
+    res.render('usersList');
+});
+router.get('/note', function(req, res) {
+    res.render('note');
 })
 router.post('/signUp', function(req, res) {
     // var newUser = new users({
