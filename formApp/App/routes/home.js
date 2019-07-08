@@ -39,7 +39,13 @@ router.post('/signUp', function(req, res) {
         password: req.body.password
     });
 
-    console.log(newuser);
+    newuser.save((err, data) => {
+        if (err)
+            console.log(err);
+        res.json(data);
+    })
+
+
 
 });
 module.exports = router;
