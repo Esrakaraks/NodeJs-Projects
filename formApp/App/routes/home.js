@@ -15,11 +15,15 @@ router.get('/signUp', function(req, res) {
     res.render('signUp');
 })
 router.get('/usersList', function(req, res) {
-    res.render('usersList');
+    userr.find(function(err, results) {
+        console.log(results);
+        res.render('/usersList')
+    })
+
 });
 router.get('/note', function(req, res) {
     res.render('note');
-})
+});
 router.post('/signUp', function(req, res) {
     // var newUser = new users({
     //     name: "esra",
@@ -47,7 +51,7 @@ router.post('/signUp', function(req, res) {
     newuser.save((err, data) => {
         if (err)
             console.log(err);
-        res.json(data);
+        res.render('usersList', { data: req.body });
     })
 
 
