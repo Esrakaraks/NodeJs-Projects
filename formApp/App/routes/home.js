@@ -17,13 +17,14 @@ router.get('/signUp', function(req, res) {
 router.get('/usersList', function(req, res) {
     userr.find(function(err, results) {
         console.log(results);
-        res.render('/usersList')
-    })
+        res.render('/usersList', { kullanici: results })
+    });
 
 });
 router.get('/note', function(req, res) {
     res.render('note');
 });
+
 router.post('/signUp', function(req, res) {
     // var newUser = new users({
     //     name: "esra",
@@ -51,10 +52,12 @@ router.post('/signUp', function(req, res) {
     newuser.save((err, data) => {
         if (err)
             console.log(err);
-        res.render('usersList', { data: req.body });
+        res.render('usersList');
     })
 
 
 
 });
+
+
 module.exports = router;
