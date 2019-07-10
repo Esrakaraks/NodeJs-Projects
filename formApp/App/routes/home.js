@@ -17,7 +17,7 @@ router.get('/signUp', function(req, res) {
 router.get('/usersList', function(req, res) {
     users.find(function(err, results) {
         console.log(results);
-        res.render('usersList');
+        res.render('usersList', { datas: results });
     });
 
 });
