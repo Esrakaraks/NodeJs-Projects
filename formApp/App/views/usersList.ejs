@@ -1,12 +1,28 @@
 <h1>Kullanıcılar Listesi</h1>
 
-<ul>
-<% for(var i = 0;i<datas.length;i++){ %>
- <li>
-    <%=datas[i]%>
-</li>
 
-<%}%>
+<div class="container">
+ <table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Username</th>
+    </tr>
 
 
+    </thead>
+    <tbody>
+    <%for(var i=0; i<datas.length;i++){%>
+     <tr>
+        <th><%=datas[i].name%></th>
+        <th><%=datas[i].surname%></th>
+        <th><%=datas[i].email%></th>
+        <th><%=datas[i].username%></th>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
+</div>
 
