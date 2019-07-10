@@ -15,9 +15,12 @@ router.get('/signUp', function(req, res) {
     res.render('signUp');
 })
 router.get('/usersList', function(req, res) {
-    userr.find(function(err, results) {
-        console.log(results);
-        res.render('/usersList', { kullanici: results })
+    User.find(function(err, results) {
+        if (err)
+            console.log(err)
+        else
+
+            res.render('/usersList', { userlar: results })
     });
 
 });
