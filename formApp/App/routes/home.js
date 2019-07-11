@@ -1,19 +1,23 @@
 var express = require('express');
 var router = express.Router();
-
 var users = require('../models/users');
+
 router.get('/', function(req, res) {
     res.render('home');
 });
+
 router.get('/login', function(req, res) {
     res.render('login');
 });
+
 router.post('/login', function(req, res) {
     res.render('login');
 });
+
 router.get('/signUp', function(req, res) {
     res.render('signUp');
-})
+});
+
 router.get('/usersList', function(req, res) {
     users.find(function(err, results) {
         console.log(results);
@@ -21,9 +25,7 @@ router.get('/usersList', function(req, res) {
     });
 
 });
-router.get('/note', function(req, res) {
-    res.render('note');
-});
+
 
 router.post('/signUp', function(req, res) {
     // var newUser = new users({
