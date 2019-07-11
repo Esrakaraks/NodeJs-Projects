@@ -20,11 +20,11 @@ router.get('/signUp', function(req, res) {
 
 router.get('/usersList', function(req, res) {
     users.find(function(err, results) {
-        console.log(results);
         res.render('usersList', { datas: results });
     });
 
 });
+
 
 
 router.post('/signUp', function(req, res) {
@@ -55,7 +55,8 @@ router.post('/signUp', function(req, res) {
         if (err)
             console.log(err);
         res.render('usersList');
-    })
+    });
+
 
 
 
